@@ -192,12 +192,13 @@ int reglas;
 void reglas() {
   if (reglas!=2) {
     fill(245);
-    rect( 0, height*3/8, width, height/4, 7);
+    rect( 0, height*3/8, width, height/3, 7);
     textAlign(CENTER);
 
     fill(150, 150, 255);
     textSize(25);
-    text("Completa el camino sin \n repetir ninguna linea", width/2, height/2);
+    text("Completa el camino sin \n repetir ninguna linea \n doble click en el punto para comenzar", width/2, height/2);
+    
   }
 }
 int aux1, aux2;
@@ -335,7 +336,8 @@ int doble_l[][]=new int[50][50];
 int creador;
 
 public void mouseReleased() {
-  if (pantalla==1||pantalla==2||pantalla==3&& reglas==1) {
+  println(reglas);
+  if (pantalla==1&& (reglas==1||reglas==2)||(pantalla==2 && (reglas==1||reglas==2))||pantalla==3&& (reglas==1||reglas==2)) {
 
     if (c==0&&start==1) {
       x2=pmouseX;
